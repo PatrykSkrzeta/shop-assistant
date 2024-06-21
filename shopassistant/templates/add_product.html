@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+      <div class="productcontainer container mt-5 card bg-secondary" style="max-width: 70vw;">
+        <h2 style="margin-top: 4rem; text-shadow: 1px 1px 1px black;">Add Product</h2>
+        <form class="productbox" method="POST" action="{{ url_for('addproduct') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.name.label(class="productlabel") }}
+                {{ form.name(class="form-control productinput", id="name", placeholder="Name...") }}
+            </div>
+            <div class="form-group">
+                {{ form.category.label(class="productlabel") }}
+                {{ form.category(class="form-control productinput", id="category") }}
+            </div>
+            <div class="form-group">
+                {{ form.type.label(class="productlabel") }}
+                {{ form.type(class="form-control productinput", id="type", placeholder="Type...") }}
+            </div>
+            <div class="form-group">
+                {{ form.value.label(class="productlabel") }}
+                {{ form.value(class="form-control productinput", id="value", placeholder="Value...") }}
+            </div>
+            <div class="form-group">
+                {{ form.price.label(class="productlabel") }}
+                {{ form.price(class="form-control productinput", id="price", placeholder="Price...") }}
+            </div>
+            {{ form.submit(class="btn btn-success mt-4 mb-4", style="    padding: 1rem;
+            width: 10rem;
+            font-size: 2rem;") }}
+        </form>
+    </div>
+    
+
+    {% endblock %}
